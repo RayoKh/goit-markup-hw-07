@@ -1,3 +1,3 @@
-# goit-markup-hw-06
+# goit-markup-hw-07
 
-Making an adaptive version of all elements of the main page.
+
