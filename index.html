@@ -35,7 +35,8 @@
             <li><a href="#" class="nav-link link">Contacts</a></li>
           </ul>
         </nav>
-        <address>
+
+        <address class="address">
           <ul class="address-list">
             <li>
               <a href="mailto:info@devstudio.com" class="header-address link">info@devstudio.com</a>
@@ -45,12 +46,23 @@
             </li>
           </ul>
         </address>
+
+        <button
+          class="burger js-open-menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="header-menu-icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
     <main>
       <section class="hero">
-        <div class="hero-container container">
+        <div class="hero-container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
           <button type="button" class="hero-btn" data-modal-open>Order Service</button>
         </div>
@@ -117,20 +129,30 @@
           <h2 class="produce-title">What are we doing</h2>
           <ul class="produce-list list">
             <li>
-              <img class="mockup img" src="./images/moc-1.jpg" alt="monitor with open dashboard" />
-            </li>
-            <li>
               <img
                 class="mockup img"
-                src="./images/moc-2.jpg"
-                alt="mocap with a demonstration of the messenger"
+                srcset="./images/produce/mocup-1@1x.jpg 1x, ./images/produce/mocup-1@1x.jpg 2x"
+                src="./images/produce/moc-1.jpg"
+                alt="monitor with open dashboard"
+                loading="lazy"
               />
             </li>
             <li>
               <img
                 class="mockup img"
-                src="./images/moc-3.jpg"
+                srcset="./images/produce/mocup-2@1x.jpg 1x, ./images/produce/mocup-2@2x.jpg 2x"
+                src="./images/produce/moc-2.jpg"
+                alt="mocap with a demonstration of the messenger"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                class="mockup img"
+                srcset="./images/produce/mocup-3@1x.jpg 1x, ./images/produce/mocup-3@1x.jpg 2x"
+                src="./images/produce/moc-3.jpg"
                 alt="a hand holds a phone that shows a mocap"
+                loading="lazy"
               />
             </li>
           </ul>
@@ -144,8 +166,12 @@
             <li class="team-card card-set-item">
               <img
                 class="team-card-img img"
-                src="./images/card-mark.jpg"
+                srcset="./images/team/card-mark@1x.jpg 1x, ./images/team/card-mark@2x.jpg 2x"
+                src="./images/team/card-mark.jpg"
                 alt="photo Mark Guerrero product designer"
+                width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="content">
                 <h3 class="team-card-title">Mark Guerrero</h3>
@@ -185,8 +211,12 @@
             <li class="team-card card-set-item">
               <img
                 class="team-card-img img"
-                src="./images/card-tom.jpg"
+                srcset="./images/team/card-tom@1x.jpg 1x, ./images/team/card-tom@2x.jpg 2x"
+                src="./images/team/card-tom.jpg"
                 alt="photo Tom Ford frontend developer"
+                width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="content">
                 <h3 class="team-card-title">Tom Ford</h3>
@@ -226,8 +256,12 @@
             <li class="team-card card-set-item">
               <img
                 class="team-card-img img"
-                src="./images/card-camila.jpg"
+                srcset="./images/team/card-camila@1x.jpg 1x, ./images/team/card-camila@2x.jpg 2x"
+                src="./images/team/card-camila.jpg"
                 alt="photo Camila Garcia marketing"
+                width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="content">
                 <h3 class="team-card-title">Camila Garcia</h3>
@@ -267,8 +301,12 @@
             <li class="team-card card-set-item">
               <img
                 class="team-card-img img"
+                srcset="./images/team/card-daniel@1x.jpg 1x, ./images/team/card-daniel@2x.jpg 2x"
                 src="./images/card-daniel.jpg"
                 alt="photo Daniel Wilson ui designer"
+                width="264"
+                height="260"
+                loading="lazy"
               />
               <div class="content">
                 <h3 class="team-card-title">Daniel Wilson</h3>
@@ -414,7 +452,7 @@
         <div class="subscribe">
           <h2 class="subscribe-title">Subscribe</h2>
           <form class="subscribe-form">
-            <label>
+            <label class="subscribe-label">
               <input class="subscribe-field" type="email" name="email" placeholder="E-mail" />
             </label>
             <button class="subscribe-btn" type="submit"
@@ -430,91 +468,168 @@
 
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button class="modal-btn" type="button" data-modal-close>
-          <svg class="modal-icon" width="8" height="8">
-            <use href="./images/icons.svg#icon-close-btn"></use>
-          </svg>
-        </button>
-        <strong class="modal-title">Leave your contacts and we will call you back</strong>
-        <form class="modal-form">
-          <!-- Name field -->
-          <label class="modal-form-label" for="user_name">Name</label>
-          <div class="modal-form-group">
-            <input
-              class="modal-form-field"
-              type="text"
-              name="name"
-              id="user_name"
-              autocomplete="off"
-              required
-            />
-            <svg class="modal-form-icon" width="18" height="18">
-              <use href="./images/icons.svg#icon-person"></use>
+        <div class="modal-wrapper">
+          <button class="modal-btn" type="button" data-modal-close>
+            <svg class="modal-icon" width="8" height="8">
+              <use href="./images/icons.svg#icon-close-btn"></use>
             </svg>
-          </div>
+          </button>
+          <strong class="modal-title">Leave your contacts and we will call you back</strong>
+          <form class="modal-form">
+            <!-- Name field -->
+            <label class="modal-form-label" for="user_name">Name</label>
+            <div class="modal-form-group">
+              <input
+                class="modal-form-field"
+                type="text"
+                name="name"
+                id="user_name"
+                autocomplete="off"
+                required
+              />
+              <svg class="modal-form-icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
 
-          <!-- Phone field -->
-          <label class="modal-form-label" for="user_telephone">Phone</label>
-          <div class="modal-form-group">
-            <input
-              class="modal-form-field"
-              type="tel"
-              name="telephone"
-              id="user_telephone"
-              autocomplete="off"
-              required
-            />
-            <svg class="modal-form-icon" width="18" height="24">
-              <use href="./images/icons.svg#icon-phone"></use>
-            </svg>
-          </div>
+            <!-- Phone field -->
+            <label class="modal-form-label" for="user_telephone">Phone</label>
+            <div class="modal-form-group">
+              <input
+                class="modal-form-field"
+                type="tel"
+                name="telephone"
+                id="user_telephone"
+                autocomplete="off"
+                required
+              />
+              <svg class="modal-form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
 
-          <!-- E-mail field -->
-          <label class="modal-form-label" for="user_email">Email</label>
-          <div class="modal-form-group">
-            <input
-              class="modal-form-field"
-              type="email"
-              name="email"
-              id="user_email"
-              autocomplete="off"
-              required
-            />
-            <svg class="modal-form-icon" width="18" height="24">
-              <use href="./images/icons.svg#icon-email"></use>
-            </svg>
-          </div>
+            <!-- E-mail field -->
+            <label class="modal-form-label" for="user_email">Email</label>
+            <div class="modal-form-group">
+              <input
+                class="modal-form-field"
+                type="email"
+                name="email"
+                id="user_email"
+                autocomplete="off"
+                required
+              />
+              <svg class="modal-form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
 
-          <!-- Comment field -->
-          <label class="modal-form-label" for="user_feedback">Email</label>
-          <textarea
-            class="modal-form-comment"
-            name="feedback"
-            id="user_feedback"
-            rows="6"
-            placeholder="Text input"
-          ></textarea>
+            <!-- Comment field -->
+            <label class="modal-form-label" for="user_feedback">Email</label>
+            <textarea
+              class="modal-form-comment"
+              name="feedback"
+              id="user_feedback"
+              rows="6"
+              placeholder="Text input"
+            ></textarea>
 
-          <!-- Agreement field -->
-          <label class="modal-form-agreement" for="user_agreement">
-            <input
-              class="modal-form-checkbox"
-              type="checkbox"
-              name="user_agreement"
-              id="user_agreement"
-              required
-            />
-            <span class="modal-form-desc">
-              I accept the terms and conditions of the
-              <a class="modal-form-link" href="" target="_blank">Privacy Policy</a>
-            </span>
-          </label>
+            <!-- Agreement field -->
+            <label class="modal-form-agreement" for="user_agreement">
+              <input
+                class="modal-form-checkbox"
+                type="checkbox"
+                name="user_agreement"
+                id="user_agreement"
+                required
+              />
+              <span class="modal-form-desc">
+                I accept the terms and conditions of the
+                <a class="modal-form-link" href="" target="_blank">Privacy Policy</a>
+              </span>
+            </label>
 
-          <button class="agreement-btn" type="submit">Send</button>
-        </form>
+            <button class="agreement-btn" type="submit">Send</button>
+          </form>
+        </div>
       </div>
     </div>
 
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg
+          class="toggle-btn"
+          fill="currentColor"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          width="8"
+          height="8"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M32 3.224 28.776 0 16 12.776 3.224 0 0 3.224 12.776 16 0 28.776 3.224 32 16 19.224 28.776 32 32 28.776 19.224 16 32 3.224z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu">
+        <li><a href="./index.html" class="menu-link link">Studio</a></li>
+        <li>
+          <a href="./portfolio.html" class="menu-link link">Portfolio</a>
+        </li>
+        <li><a href="#" class="menu-link link current">Contacts</a></li>
+      </ul>
+
+      <div class="menu-wrapper">
+        <address class="menu-contacts">
+          <ul class="contacts-list">
+            <li>
+              <a href="mailto:info@devstudio.com" class="contacts-mail link">info@devstudio.com</a>
+            </li>
+            <li>
+              <a href="tel:+110001111111" class="contacts-number current link"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+          </ul>
+        </address>
+
+        <ul class="menu-socials list">
+          <li class="social-item">
+            <a class="social-link" href aria-label="Instagram link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href aria-label="Twitter link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href aria-label="Facebook link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href aria-label="LinkedIn link">
+              <svg class="social-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/body-scroll-lock@4.0.0-beta.0/lib/bodyScrollLock.min.js"></script>
     <script src="./js/modal.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
   </body>
 </html>
