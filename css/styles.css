@@ -79,9 +79,6 @@ button {
 .section {
   padding-top: 96px;
   padding-bottom: 96px;
-
-  outline: 2px solid red;
-  outline-offset: -2px;
 }
 @media screen and (min-width: 1200px) {
   .section {
@@ -98,9 +95,6 @@ button {
   padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
-
-  outline: 2px solid red;
-  outline-offset: -2px;
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -396,8 +390,6 @@ button {
     padding-bottom: 188px;
   }
 }
-.hero-container {
-}
 
 .hero-title {
   text-align: center;
@@ -464,10 +456,6 @@ button {
   |============================
 */
 
-.features-container {
-  /* margin-top: 72px; */
-}
-
 .features-list {
   display: flex;
   flex-direction: column;
@@ -512,9 +500,6 @@ button {
     align-items: center;
     background-color: var(--cloud-color);
   }
-}
-
-.features-icons {
 }
 
 .features-title {
@@ -570,8 +555,6 @@ button {
   }
 }
 
-.produce-container {
-}
 .produce-list {
   display: flex;
   align-items: center;
@@ -611,9 +594,6 @@ button {
   background-color: var(--cloud-color);
 }
 
-.team-container {
-}
-
 .team-title {
   font-size: 36px;
   line-height: 1.11;
@@ -625,9 +605,6 @@ button {
   margin-bottom: 72px;
 
   color: var(--navy-blue-color);
-}
-
-.team-cards {
 }
 
 .team-card {
@@ -675,8 +652,6 @@ button {
   justify-content: center;
   gap: 24px;
 }
-.social-item {
-}
 
 .social-link {
   display: flex;
@@ -709,10 +684,6 @@ button {
   |============================
 */
 
-.customers {
-}
-.customers-container {
-}
 .customers-title {
   font-size: 36px;
   line-height: 1.11;
@@ -738,8 +709,6 @@ button {
   .customers-list {
     column-gap: 24px;
   }
-}
-.customers-item {
 }
 
 .customer-link {
@@ -860,8 +829,6 @@ button {
   color: var(--cornflower-color);
 }
 
-.footer-social {
-}
 .footer-social-title {
   font-weight: 500;
   font-size: 16px;
@@ -882,8 +849,6 @@ button {
   align-items: center;
   justify-content: center;
   gap: 16px;
-}
-.footer-social-item {
 }
 
 .footer-social-link {
@@ -1302,8 +1267,6 @@ button {
   margin-bottom: 16px;
 }
 
-.modal-form {
-}
 .modal-form-label {
   display: block;
   font-size: 12px;
@@ -1513,13 +1476,6 @@ button {
   margin-bottom: 284px;
 }
 
-/* .mobile-menu .link {
-  display: block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-} */
-
 .menu-link {
   font-weight: 700;
   font-size: 36px;
@@ -1555,8 +1511,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 56px;
+  gap: 50px;
   margin-bottom: 8px;
+}
+@media screen and (min-width: 340px) {
+  .menu-socials {
+    gap: 56px;
+  }
 }
 
 .current {
